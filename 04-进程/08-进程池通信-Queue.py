@@ -15,6 +15,7 @@ def reader(q):
     for i in range(q.qsize()):
         print("reader从Queue获取到消息：%s" % q.get(True))
 
+
 def writer(q):
     print("writer启动(%s), 父进程为(%s)" % (os.getpid(), os.getppid()))
     for i in "itcast":
@@ -34,4 +35,3 @@ if __name__ == '__main__':
     po.close()
     po.join()
     print("(%s) End" % os.getpid())
-
